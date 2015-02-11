@@ -12,6 +12,11 @@ BOT_NAME = 'google_scholar'
 
 SPIDER_MODULES = ['google_scholar.spiders']
 NEWSPIDER_MODULE = 'google_scholar.spiders'
-
+DOWNLOAD_DELAY=45
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'google_scholar (+http://www.yourdomain.com)'
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
+    'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
+}
+RANDOMIZE_DOWNLOAD_DELAY = True
