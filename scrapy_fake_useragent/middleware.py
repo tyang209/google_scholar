@@ -1,5 +1,5 @@
 from fake_useragent import UserAgent
-
+from scrapy import log
 
 class RandomUserAgentMiddleware(object):
     def __init__(self):
@@ -8,4 +8,6 @@ class RandomUserAgentMiddleware(object):
         self.ua = UserAgent()
 
     def process_request(self, request, spider):
-        request.headers.setdefault('User-Agent', self.ua.random)
+    	ua = self.ua.random
+        request.headers.setdefault('User-Agent', ua)
+        spider.log(u'Headers: %s' % request.headers.to_string(), level = log.INFO)

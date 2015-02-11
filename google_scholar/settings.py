@@ -20,3 +20,7 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
 }
 RANDOMIZE_DOWNLOAD_DELAY = True
+COOKIES_ENABLED=True
+# LOG_ENABLED = True
+# LOG_LEVEL = 'INFO' # Levels: CRITICAL, ERROR, WARNING, INFO, DEBUG
+# LOG_FILE = './scholar.log'

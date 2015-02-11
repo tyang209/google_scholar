@@ -4,24 +4,35 @@ from scrapy.contrib.linkextractors.lxmlhtml import LxmlLinkExtractor
 from scrapy import Selector
 from google_scholar.items import GoogleScholarItem
 import re
+from scrapy import log
+from scrapy.log import ScrapyFileLogObserver
 
 class scholarSpider(CrawlSpider):
-
 	name = "google_scholar"
-	allowed_domains = ["google.com"]
-	start_urls=["https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2003&as_yhi=2004"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2004&as_yhi=2005"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2005&as_yhi=2006"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2006&as_yhi=2007"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2007&as_yhi=2008"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2008&as_yhi=2009"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2009&as_yhi=2010"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2010&as_yhi=2011"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2011&as_yhi=2012"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2012&as_yhi=2013"
-,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2013&as_yhi=2014"
-	]
+	def __init__(self,name=None,**kwargs):
+		super(scholarSpider, self).__init__(name, **kwargs)
+		ScrapyFileLogObserver(open("spider.log",'w'), level = log.INFO).start()
+		ScrapyFileLogObserver(open("spider_error.log",'w'), level = log.ERROR).start()
 
+		allowed_domains = ["google.com"]
+		self.start_urls=[
+	"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2000&as_yhi=2001"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2001&as_yhi=2002"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2002&as_yhi=2003"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2003&as_yhi=2004"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2004&as_yhi=2005"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2005&as_yhi=2006"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2006&as_yhi=2007"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2007&as_yhi=2008"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2008&as_yhi=2009"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2009&as_yhi=2010"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2010&as_yhi=2011"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2011&as_yhi=2012"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2012&as_yhi=2013"
+	,"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&sciodt=0%2C33&cites=9318891088915020614&scipsc=&as_ylo=2013&as_yhi=2014"
+		]
+
+		
 	rules = [Rule (LxmlLinkExtractor(restrict_xpaths="//td[contains(@align,'left')]"),
 									follow=True,callback='parse_page')]
 	
@@ -29,6 +40,8 @@ class scholarSpider(CrawlSpider):
 	def parse_page(self, response):
 		items = []
 		hxs = Selector(text=response.body,type="html")
+		self.log('URL: %s' %response.url,level=log.INFO)
+		# self.log('Headers: %s' %response.request.headers.to_string(),level=log.INFO)		
 		for div in hxs.xpath("//div[contains(@class,'gs_ri')]"):
 			
 			item = GoogleScholarItem()

@@ -1,0 +1,13 @@
+2015-02-11 17:00:16-0500 [scrapy] INFO: Scrapy 0.24.4 started (bot: google_scholar)
+2015-02-11 17:00:16-0500 [scrapy] INFO: Optional features available: ssl, http11, boto
+2015-02-11 17:00:16-0500 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'google_scholar.spiders', 'FEED_URI': 'items3.csv', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['google_scholar.spiders'], 'BOT_NAME': 'google_scholar', 'FEED_FORMAT': 'csv', 'LOG_FILE': './scholar.log', 'DOWNLOAD_DELAY': 45}
+2015-02-11 17:00:17-0500 [scrapy] INFO: Enabled extensions: FeedExporter, LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-02-11 17:00:18-0500 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RandomUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-02-11 17:00:18-0500 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-02-11 17:00:18-0500 [scrapy] INFO: Enabled item pipelines: 
+2015-02-11 17:00:18-0500 [google_scholar] INFO: Spider opened
+2015-02-11 17:00:18-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 17:01:18-0500 [google_scholar] INFO: Crawled 2 pages (at 2 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 17:01:36-0500 [scrapy] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2015-02-11 17:01:36-0500 [google_scholar] INFO: Closing spider (shutdown)
+2015-02-11 17:01:36-0500 [scrapy] INFO: Received SIGINT twice, forcing unclean shutdown

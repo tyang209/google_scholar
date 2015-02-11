@@ -1,0 +1,20 @@
+2015-02-11 18:00:29-0500 [scrapy] INFO: Scrapy 0.24.4 started (bot: google_scholar)
+2015-02-11 18:00:29-0500 [scrapy] INFO: Optional features available: ssl, http11, boto
+2015-02-11 18:00:29-0500 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'google_scholar.spiders', 'FEED_URI': 'items3.csv', 'SPIDER_MODULES': ['google_scholar.spiders'], 'BOT_NAME': 'google_scholar', 'FEED_FORMAT': 'csv', 'DOWNLOAD_DELAY': 45}
+2015-02-11 18:00:29-0500 [scrapy] INFO: Enabled extensions: FeedExporter, LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-02-11 18:00:31-0500 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-02-11 18:00:31-0500 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-02-11 18:00:31-0500 [scrapy] INFO: Enabled item pipelines: 
+2015-02-11 18:00:31-0500 [google_scholar] INFO: Spider opened
+2015-02-11 18:00:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:01:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:02:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:03:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:04:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:05:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:06:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:07:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:08:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:09:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:10:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-02-11 18:11:31-0500 [google_scholar] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
