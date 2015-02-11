@@ -11,6 +11,7 @@ class scholarSpider(Spider):
 	start_urls=["https://scholar.google.com/scholar?as_q=&as_epq=Kyoto+University&as_oq=&as_eq=&as_occt=any&as_sauthors=&as_publication=&as_ylo=2000&as_yhi=&btnG=&hl=en&as_sdt=0%2C33"
 	]
 
+	rules = (Rule ())
 	def parse(self, response):
 		items = []
 		hxs = Selector(text=response.body,type="html")
